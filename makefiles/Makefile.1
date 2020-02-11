@@ -1,0 +1,10 @@
+# Simple makefile demonstrating "targets" (on the left of the colon),
+# "prerequisites" (on the right of the colon), and commands to
+# build the prerequisites into the target
+
+hello: hello.o
+	gcc -o hello hello.o
+
+hello.o: hello.c
+	gcc -c -o hello.o hello.c
+
