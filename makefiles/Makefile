@@ -6,14 +6,23 @@
 
 CC=gcc
 CFLAGS=-g
-OBJS=hello.o
+ASM=as
+ASMFLAGS=-g
+
+OBJS=hello.o hello_s.o
 EXECUTABLE=hello
 
+# Link the object files together into the executable
 $(EXECUTABLE): $(OBJS)
 	$(CC) $(CFLAGS) -o $(EXECUTABLE) $^
 
+# Compile C source files into object files
 %.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $<
+
+# Assemble assembly language source files into object files
+%.o: %.s
+	$(ASM) $(ASMFLAGS) -o $@ $<
 
 clean:
 	rm -rf $(EXECUTABLE) $(OBJS)
