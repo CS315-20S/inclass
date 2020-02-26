@@ -9,7 +9,7 @@ CFLAGS=-g
 ASM=as
 ASMFLAGS=-g
 
-OBJS=indexing.o index1.o
+OBJS=indexing.o index1.o index2.o
 EXECUTABLE=indexing
 
 # Link the object files together into the executable
